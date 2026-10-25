@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;500;600&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="vendor/leaflet.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body class="summer">
 
@@ -69,8 +69,8 @@
 <!-- S1 hero -->
 <section class="hero" id="hero">
   <div class="bg">
-    <img src="assets/img/hero-summer.webp" srcset="assets/img/hero-summer-sm.webp 800w, assets/img/hero-summer.webp 1672w" sizes="100vw" alt="Вид з апартаменту на море і Брач улітку" data-hero="summer" class="on">
-    <img src="assets/img/hero-winter.webp" srcset="assets/img/hero-winter-sm.webp 800w, assets/img/hero-winter.webp 1672w" sizes="100vw" alt="Вид з апартаменту на море взимку" data-hero="winter" loading="lazy">
+    <img src="assets/img/hero-summer.webp" srcset="assets/img/hero-summer-sm.webp 800w, assets/img/hero-summer.webp 1672w" sizes="100vw" alt="Вид з апартаменту на море і Брач улітку" data-hero="summer" fetchpriority="high" class="on">
+    <img src="assets/img/hero-winter.webp" srcset="assets/img/hero-winter-sm.webp 800w, assets/img/hero-winter.webp 1672w" sizes="100vw" alt="Вид з апартаменту на море взимку" data-hero="winter" fetchpriority="high">
   </div>
   <div class="frame"></div>
   <div class="gulls"><img src="assets/img/gulls.webp" alt=""></div>
@@ -94,8 +94,8 @@
     <p class="lead fade-up d3" data-s="s2.p">Промайна - маленьке курортне селище на Макарській Рив’єрі, під горами Біоково. З кожного апартаменту видно море і острів Брач. Я Павло, власник. Ви бронюєте напряму в мене, без комісії Booking, тому ціна для вас нижча.</p>
   </div>
   <div class="phs">
-    <div class="ph l" data-parallax="-1"><img src="assets/img/about-a-summer.webp" srcset="assets/img/about-a-summer-sm.webp 800w, assets/img/about-a-summer.webp 1122w" sizes="(max-width: 1100px) 46vw, 320px" alt="" data-img="about.a"></div>
-    <div class="ph r" data-parallax="1"><img src="assets/img/about-b-summer.webp" srcset="assets/img/about-b-summer-sm.webp 800w, assets/img/about-b-summer.webp 1122w" sizes="(max-width: 1100px) 46vw, 320px" alt="" data-img="about.b"></div>
+    <div class="ph l" data-parallax="-1"><img loading="lazy" decoding="async" src="assets/img/about-a-summer.webp" srcset="assets/img/about-a-summer-sm.webp 800w, assets/img/about-a-summer.webp 1122w" sizes="(max-width: 1100px) 46vw, 320px" alt="" data-img="about.a"></div>
+    <div class="ph r" data-parallax="1"><img loading="lazy" decoding="async" src="assets/img/about-b-summer.webp" srcset="assets/img/about-b-summer-sm.webp 800w, assets/img/about-b-summer.webp 1122w" sizes="(max-width: 1100px) 46vw, 320px" alt="" data-img="about.b"></div>
   </div>
 </section>
 
@@ -137,11 +137,11 @@
 
 <!-- S5 split -->
 <section class="split" id="prices" data-reveal>
-  <div class="photo"><img src="assets/img/split-summer.webp" srcset="assets/img/split-summer-sm.webp 800w, assets/img/split-summer.webp 1122w" sizes="(max-width: 768px) 100vw, 50vw" alt="" data-img="s5.img"></div>
+  <div class="photo"><img loading="lazy" decoding="async" src="assets/img/split-summer.webp" srcset="assets/img/split-summer-sm.webp 800w, assets/img/split-summer.webp 1122w" sizes="(max-width: 768px) 100vw, 50vw" alt="" data-img="s5.img"></div>
   <div class="text">
     <span class="label fade-up" data-s="s5.label">Напряму від власника</span>
     <h2 class="fade-up d1" data-s="s5.h">Без комісії Booking</h2>
-    <div class="small fade-up d2"><img src="assets/img/about-b-summer-sm.webp" alt="" data-img="s5.small" data-sm></div>
+    <div class="small fade-up d2"><img loading="lazy" decoding="async" src="assets/img/about-b-summer-sm.webp" alt="" data-img="s5.small" data-sm></div>
     <div class="slides fade-up d3" id="split-slides"></div>
     <div class="dots" id="split-dots"></div>
     <div class="calc fade-up d3" id="calc" hidden>
@@ -156,7 +156,7 @@
 
 <!-- S6 feature -->
 <section class="feature" id="routes" data-reveal>
-  <div class="wide fade-up"><img src="assets/img/feature-summer.webp" srcset="assets/img/feature-summer-sm.webp 800w, assets/img/feature-summer.webp 1672w" sizes="(max-width: 1200px) 100vw, 1170px" alt="" data-img="s6.img"></div>
+  <div class="wide fade-up"><img loading="lazy" decoding="async" src="assets/img/feature-summer.webp" srcset="assets/img/feature-summer-sm.webp 800w, assets/img/feature-summer.webp 1672w" sizes="(max-width: 1200px) 100vw, 1170px" alt="" data-img="s6.img"></div>
   <div class="c">
     <span class="label fade-up" data-s="s6.label">Маршрути</span>
     <h2 class="h-sec"><span class="l1" data-s="s6.h1" data-words>Один день, три</span><span class="l2" data-s="s6.h2" data-words>чи цілий тиждень</span></h2>
@@ -202,10 +202,10 @@
 
 <!-- S8 cta -->
 <section class="cta" id="contact" data-reveal>
-  <div class="ph p1" data-speed=".18"><img src="assets/img/e-brac-sm.webp" alt="" data-cta="0"></div>
-  <div class="ph p2" data-speed="-.12"><img src="assets/img/e-sea-sm.webp" alt="" data-cta="1"></div>
-  <div class="ph p3" data-speed="-.2"><img src="assets/img/apt-3-sm.webp" alt="" data-cta="2"></div>
-  <div class="ph p4" data-speed=".14"><img src="assets/img/e-makarska-sm.webp" alt="" data-cta="3"></div>
+  <div class="ph p1" data-speed=".18"><img loading="lazy" decoding="async" src="assets/img/e-brac-sm.webp" alt="" data-cta="0"></div>
+  <div class="ph p2" data-speed="-.12"><img loading="lazy" decoding="async" src="assets/img/e-sea-sm.webp" alt="" data-cta="1"></div>
+  <div class="ph p3" data-speed="-.2"><img loading="lazy" decoding="async" src="assets/img/apt-3-sm.webp" alt="" data-cta="2"></div>
+  <div class="ph p4" data-speed=".14"><img loading="lazy" decoding="async" src="assets/img/e-makarska-sm.webp" alt="" data-cta="3"></div>
   <div class="c">
     <h2 class="h-sec big"><span class="l1" data-s="s8.h1" data-words>Готові?</span><span class="l2 gold" data-s="s8.h2" data-words>До моря 300 метрів.</span></h2>
     <p class="lead fade-up d3" data-s="s8.p">Напишіть Павлу, і він назве ціну на ваші дати.</p>
@@ -280,9 +280,9 @@
   <form class="ask-form" id="ask-form"><input type="text" id="ask-input" placeholder="Ваше питання" data-ui-ph="as.ph" autocomplete="off"><button type="submit" data-ui="as.send">Надіслати</button></form>
 </div>
 
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script src="js/data.js?v=3"></script>
-<script src="js/main.js?v=3"></script>
+<script defer src="vendor/lenis.min.js"></script>
+<script defer src="vendor/leaflet.js"></script>
+<script defer src="js/data.js?v=4"></script>
+<script defer src="js/main.js?v=4"></script>
 </body>
 </html>
