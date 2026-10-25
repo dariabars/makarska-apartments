@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 80" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+  <path class="c-shield" d="M32 3 L55 9 C55 30 54 48 32 71 C10 48 9 30 9 9 Z"/>
+  <path class="c-shield" d="M32 7 L51.5 12 C51.5 30 50.5 46 32 66 C13.5 46 12.5 30 12.5 12 Z" stroke-width=".7" opacity=".7"/>
+  <circle class="c-sun" cx="32" cy="24" r="5.2"/>
+  <path class="c-sun" d="M32 14.5v2.6M32 31v2.6M22.5 24h2.6M39 24h2.6M25.3 17.3l1.8 1.8M37 29l1.8 1.8M38.7 17.3 37 19.1M27.1 29l-1.8 1.8" stroke-width=".9"/>
+  <path class="c-pine" d="M18 44 L20.5 39 L23 44 M19 41 L20.5 37.5 L22 41 M20.5 44v3.5" stroke-width=".9"/>
+  <path class="c-pine" d="M41 44 L43.5 39 L46 44 M42 41 L43.5 37.5 L45 41 M43.5 44v3.5" stroke-width=".9"/>
+  <path class="c-wave" d="M19 51c2.6-2.2 5.2-2.2 7.8 0s5.2 2.2 7.8 0 5.2-2.2 7.8 0M21 55.5c2.6-2.2 5.2-2.2 7.8 0s5.2 2.2 7.8 0 5.2-2.2 7.8 0" stroke-width=".9"/>
+  <path class="c-ribbon" d="M3 73 C12 70 20 70 32 72 C44 70 52 70 61 73" stroke-width=".8"/>
+  <text class="c-text" x="32" y="78.5" text-anchor="middle" font-family="Raleway, Arial, sans-serif" font-size="5.2" font-weight="600" letter-spacing="1.4" fill="currentColor" stroke="none">POMALO</text>
+</svg>

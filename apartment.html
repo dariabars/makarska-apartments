@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Апартамент · Pomalo, Промайна</title>
+<meta name="description" content="Апартамент Pomalo в Промайні: планування, що є, сусіди зверху і знизу, календар зайнятості і запит на бронювання напряму власнику.">
+<link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;500;600&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body class="summer page-solid">
+
+<div class="veil" id="veil" aria-hidden="true"></div>
+
+<header class="hdr scrolled" id="hdr">
+  <div class="progress" id="progress"></div>
+  <div class="hdr-in">
+    <nav class="left" aria-label="Меню">
+      <a href="index.html#apartments" data-ui="nav.apartments">Апартаменти</a>
+      <a href="apartments.html#plan" data-ui="nav.plan">План будинку</a>
+      <a href="index.html#days" data-ui="nav.place">Промайна</a>
+      <a href="index.html#prices" data-ui="nav.prices">Ціни</a>
+    </nav>
+    <a class="crest-link" href="index.html" aria-label="Pomalo" data-crest></a>
+    <nav class="right" aria-label="Меню">
+      <a href="index.html#routes" data-ui="nav.routes">Маршрути</a>
+      <a href="#book" data-ui="nav.booking">Бронювання</a>
+      <div class="lang" data-lang-switch><button type="button" data-set-lang="ua" class="on">UA</button><i>/</i><button type="button" data-set-lang="en">EN</button></div>
+      <button type="button" class="season-ind" data-season-toggle aria-label="Перемкнути сезон"><b data-s="ind">☀ Літо</b></button>
+    </nav>
+    <button type="button" class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu" data-lenis-prevent>
+  <div class="mmenu-top">
+    <div class="crest" data-crest></div>
+    <button type="button" class="close" data-menu-close data-ui="nav.close">Закрити</button>
+  </div>
+  <ul>
+    <li><a href="index.html#apartments" data-ui="nav.apartments">Апартаменти</a></li>
+    <li><a href="apartments.html#plan" data-ui="nav.plan">План будинку</a></li>
+    <li><a href="index.html#days" data-ui="nav.place">Промайна</a></li>
+    <li><a href="index.html#prices" data-ui="nav.prices">Ціни</a></li>
+    <li><a href="index.html#routes" data-ui="nav.routes">Маршрути</a></li>
+    <li><a href="#book" data-ui="nav.booking">Бронювання</a></li>
+  </ul>
+  <div class="mmenu-foot">
+    <div class="row">
+      <div class="lang" data-lang-switch><button type="button" data-set-lang="ua" class="on">UA</button><button type="button" data-set-lang="en">EN</button></div>
+      <button type="button" data-season-toggle><span data-s="ind">☀ Літо</span></button>
+    </div>
+    <a class="btn-line" href="#book" data-ui="nav.write">Написати Павлу</a>
+  </div>
+</div>
+
+<main class="page" id="apartment">
+  <section class="ap-head">
+    <div>
+      <a class="back" href="apartments.html#plan"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5"/></svg><span data-ui="ap.back">Назад до плану</span></a>
+      <div class="label" id="ap-type"></div>
+      <h1 id="ap-title" style="margin-top:14px"></h1>
+    </div>
+    <div>
+      <p class="facts" id="ap-facts"></p>
+      <div class="price" id="ap-price"></div>
+    </div>
+  </section>
+
+  <div class="gallery" id="gallery"></div>
+
+  <section class="ap-grid">
+    <div>
+      <div class="ap-block">
+        <div class="k" data-ui="ap.plan">Планування</div>
+        <div class="plan2d" id="ap-plan"></div>
+        <p class="note" data-ui="ap.plan.note">Планування умовне, демо.</p>
+      </div>
+      <div class="ap-block">
+        <div class="k" data-ui="ap.calendar">Календар зайнятості</div>
+        <div class="cal static" id="ap-cal"></div>
+        <p class="note" data-ui="ap.calendar.note">Демо: зайняті дати умовні.</p>
+      </div>
+    </div>
+    <div>
+      <div class="ap-block">
+        <div class="k" data-ui="ap.has">Що є</div>
+        <div class="chips" id="ap-chips"></div>
+      </div>
+      <div class="ap-block">
+        <div class="k" data-ui="cat.neighbours">Хто зверху і знизу</div>
+        <div class="nb" id="ap-nb"></div>
+      </div>
+      <div class="ap-block">
+        <div class="k" data-ui="ap.onfacade">Де в будинку</div>
+        <div id="ap-facade"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-book" id="book" data-reveal>
+    <div class="c">
+      <span class="label fade-up" data-ui="s7.label">Бронювання</span>
+      <h2 class="h-sec"><span class="l1" data-ui="ap.book" data-words>Запит на цей апартамент</span></h2>
+      <p class="lead fade-up d3" data-s="s7.p">Вкажіть дати і скільки вас. Павло перевірить календар і відповість особисто.</p>
+    </div>
+    <form class="form" id="ap-form" novalidate></form>
+  </section>
+</main>
+
+<footer class="ft" id="footer">
+  <div class="marquee"><div class="track" id="marquee"></div></div>
+  <div class="ft-grid">
+    <div>
+      <span class="label" data-ui="ft.label">На зв’язку</span>
+      <h2><span data-ui="ft.h1">Напишіть</span><span class="script" data-ui="ft.h2">Павлу.</span></h2>
+      <p class="p" data-ui="ft.p">Відповідає сам, українською. Пишіть, на які дати і скільки вас.</p>
+      <div class="cts">
+        <a class="btn-pill" href="#book"><span data-ui="ft.whatsapp">WhatsApp</span><small data-ui="ft.whatsapp.note">номер додамо</small></a>
+        <a class="btn-pill" href="https://www.threads.com/@pavel_adriatic" target="_blank" rel="noopener">Threads <small>@pavel_adriatic</small></a>
+        <a class="btn-pill" href="https://www.tiktok.com/@pavel_adriatic" target="_blank" rel="noopener">TikTok <small>@pavel_adriatic</small></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <span class="label" data-ui="ft.site">Сайт</span>
+      <ul>
+        <li><a href="index.html#apartments" data-ui="nav.apartments">Апартаменти</a></li>
+        <li><a href="apartments.html#plan" data-ui="nav.plan">План будинку</a></li>
+        <li><a href="index.html#days" data-ui="nav.place">Промайна</a></li>
+        <li><a href="index.html#prices" data-ui="nav.prices">Ціни</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <span class="label" data-ui="ft.planning">Планування</span>
+      <ul>
+        <li><a href="#book" data-ui="nav.booking">Бронювання</a></li>
+        <li><a href="index.html#routes" data-ui="nav.routes">Маршрути</a></li>
+        <li><a href="#" data-ask-open data-ui="ft.questions">Питання</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-live">
+    <div><div class="k" data-ui="ft.time">Час у Промайні</div><div class="v" id="clock">--:--:--</div></div>
+    <div><div class="k" data-ui="ft.now">Зараз</div><div class="v" id="weather">Промайна</div></div>
+    <div><div class="k" data-ui="ft.sea">До моря</div><div class="v" data-ui="ft.sea.v">300 м</div></div>
+  </div>
+  <div class="ft-big">
+    <span class="word">Pomalo</span>
+    <div class="gulls"><img src="assets/img/gulls.webp" alt="" loading="lazy"></div>
+  </div>
+  <div class="ft-bottom">
+    <div class="soc">
+      <a class="btn-pill" href="https://www.threads.com/@pavel_adriatic" target="_blank" rel="noopener">Threads</a>
+      <a class="btn-pill" href="https://www.tiktok.com/@pavel_adriatic" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <a class="up" href="#top" data-scroll-top><span data-ui="ft.up">Вгору</span><i><svg viewBox="0 0 16 16"><path d="M8 13V3M3 8l5-5 5 5"/></svg></i></a>
+  </div>
+  <div class="ft-copy" data-ui="ft.copy">© 2026 Pomalo, Промайна. Концепт сайту для @pavel_adriatic: фото згенеровані, планування і площі умовні.</div>
+</footer>
+
+<button type="button" class="ask-btn" id="ask-btn" aria-label="Запитати" aria-expanded="false">
+  <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
+  <span class="tip" data-ui="as.open">Запитати</span><span class="dot"></span>
+</button>
+<div class="ask" id="ask" data-lenis-prevent>
+  <div class="ask-head">
+    <h3 data-ui="as.title">Питання про Промайну</h3>
+    <p data-ui="as.sub">Відповідає помічник за словами Павла. Чого не знає, передасть Павлу.</p>
+    <button type="button" class="x" data-ask-close data-ui="as.close">Закрити</button>
+  </div>
+  <div class="ask-body" id="ask-body"><div class="ask-qs" id="ask-qs"></div></div>
+  <form class="ask-form" id="ask-form"><input type="text" id="ask-input" placeholder="Ваше питання" data-ui-ph="as.ph" autocomplete="off"><button type="submit" data-ui="as.send">Надіслати</button></form>
+</div>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/data.js?v=3"></script>
+<script src="js/main.js?v=3"></script>
+<script src="js/apartments.js?v=3"></script>
+</body>
+</html>

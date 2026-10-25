@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pomalo · Апартаменти в Промайні, Макарська Рив’єра</title>
+<meta name="description" content="Десять апартаментів за 300 м від моря в Промайні, Хорватія. Влітку подобово, взимку від 450 € на місяць за двох. Напряму від власника, без комісії Booking.">
+<link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;500;600&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body class="summer">
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="crest" data-crest></div>
+  <div class="word">Pomalo</div>
+  <div class="bar"><i></i></div>
+</div>
+<div class="veil" id="veil" aria-hidden="true"></div>
+
+<header class="hdr" id="hdr">
+  <div class="progress" id="progress"></div>
+  <div class="hdr-in">
+    <nav class="left" aria-label="Меню">
+      <a href="#apartments" data-ui="nav.apartments">Апартаменти</a>
+      <a href="apartments.html#plan" data-ui="nav.plan">План будинку</a>
+      <a href="#days" data-ui="nav.place">Промайна</a>
+      <a href="#prices" data-ui="nav.prices">Ціни</a>
+    </nav>
+    <a class="crest-link" href="index.html" aria-label="Pomalo" data-crest></a>
+    <nav class="right" aria-label="Меню">
+      <a href="#routes" data-ui="nav.routes">Маршрути</a>
+      <a href="#booking" data-ui="nav.booking">Бронювання</a>
+      <div class="lang" data-lang-switch><button type="button" data-set-lang="ua" class="on">UA</button><i>/</i><button type="button" data-set-lang="en">EN</button></div>
+      <button type="button" class="season-ind" data-season-toggle aria-label="Перемкнути сезон"><b data-s="ind">☀ Літо</b></button>
+    </nav>
+    <button type="button" class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu" data-lenis-prevent>
+  <div class="mmenu-top">
+    <div class="crest" data-crest></div>
+    <button type="button" class="close" data-menu-close data-ui="nav.close">Закрити</button>
+  </div>
+  <ul>
+    <li><a href="#apartments" data-ui="nav.apartments">Апартаменти</a></li>
+    <li><a href="apartments.html#plan" data-ui="nav.plan">План будинку</a></li>
+    <li><a href="#days" data-ui="nav.place">Промайна</a></li>
+    <li><a href="#prices" data-ui="nav.prices">Ціни</a></li>
+    <li><a href="#routes" data-ui="nav.routes">Маршрути</a></li>
+    <li><a href="#booking" data-ui="nav.booking">Бронювання</a></li>
+  </ul>
+  <div class="mmenu-foot">
+    <div class="row">
+      <div class="lang" data-lang-switch><button type="button" data-set-lang="ua" class="on">UA</button><button type="button" data-set-lang="en">EN</button></div>
+      <button type="button" data-season-toggle><span data-s="ind">☀ Літо</span></button>
+    </div>
+    <a class="btn-line" href="#contact" data-ui="nav.write">Написати Павлу</a>
+  </div>
+</div>
+
+<main>
+<h1 class="sr-only" data-ui="h1">Апартаменти в Промайні на Макарській Рив’єрі: літо біля моря і зимівля від 450 € на місяць</h1>
+
+<!-- S1 hero -->
+<section class="hero" id="hero">
+  <div class="bg">
+    <img src="assets/img/hero-summer.webp" srcset="assets/img/hero-summer-sm.webp 800w, assets/img/hero-summer.webp 1672w" sizes="100vw" alt="Вид з апартаменту на море і Брач улітку" data-hero="summer" class="on">
+    <img src="assets/img/hero-winter.webp" srcset="assets/img/hero-winter-sm.webp 800w, assets/img/hero-winter.webp 1672w" sizes="100vw" alt="Вид з апартаменту на море взимку" data-hero="winter" loading="lazy">
+  </div>
+  <div class="frame"></div>
+  <div class="gulls"><img src="assets/img/gulls.webp" alt=""></div>
+  <div class="hero-c">
+    <div class="word">Pomalo</div>
+    <div class="choose" data-ui="hero.choose">Оберіть сезон</div>
+    <div class="seasons">
+      <button type="button" class="btn-pill on" data-set-season="summer"><span class="ic">☀</span><span data-ui="hero.summer">Літо</span></button>
+      <button type="button" class="btn-pill" data-set-season="winter"><span class="ic">❄</span><span data-ui="hero.winter">Зимівля</span></button>
+    </div>
+    <div class="sub" id="hero-sub" data-ui="hero.summer.sub">травень - вересень, подобово</div>
+  </div>
+  <a class="next" href="#about" data-scroll><span data-ui="hero.next">Далі</span><i></i></a>
+  <div class="fade"></div>
+</section>
+
+<!-- S2 about -->
+<section class="about" id="about" data-reveal>
+  <div class="about-c">
+    <h2 class="h-sec big"><span class="l1" data-s="s2.h1" data-words>Десять апартаментів</span><span class="l2" data-s="s2.h2" data-words>за 300 метрів від моря.</span></h2>
+    <p class="lead fade-up d3" data-s="s2.p">Промайна - маленьке курортне селище на Макарській Рив’єрі, під горами Біоково. З кожного апартаменту видно море і острів Брач. Я Павло, власник. Ви бронюєте напряму в мене, без комісії Booking, тому ціна для вас нижча.</p>
+  </div>
+  <div class="phs">
+    <div class="ph l" data-parallax="-1"><img src="assets/img/about-a-summer.webp" srcset="assets/img/about-a-summer-sm.webp 800w, assets/img/about-a-summer.webp 1122w" sizes="(max-width: 1100px) 46vw, 320px" alt="" data-img="about.a"></div>
+    <div class="ph r" data-parallax="1"><img src="assets/img/about-b-summer.webp" srcset="assets/img/about-b-summer-sm.webp 800w, assets/img/about-b-summer.webp 1122w" sizes="(max-width: 1100px) 46vw, 320px" alt="" data-img="about.b"></div>
+  </div>
+</section>
+
+<!-- S3 apartments slider -->
+<section class="apts" id="apartments" data-reveal>
+  <div class="slides" id="apt-slides"></div>
+  <span class="label light" data-ui="s3.label">Апартаменти</span>
+  <div class="top">
+    <h2 class="h-sec light"><span class="l1" data-s="s3.h1" data-words>Море видно</span><span class="l2" data-s="s3.h2" data-words>з кожного апартаменту</span></h2>
+    <div class="tabs" id="apt-tabs"></div>
+    <div class="tabsel" id="apt-tabsel"><button type="button"><span></span><i></i></button><ul></ul></div>
+  </div>
+  <button type="button" class="arrow prev" data-apt-prev><span data-ui="s3.prev">Назад</span><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5"/></svg><i></i></button>
+  <button type="button" class="arrow next" data-apt-next><span data-ui="s3.next">Далі</span><svg viewBox="0 0 16 16"><path d="m6 3 5 5-5 5"/></svg><i></i></button>
+  <div class="card" id="apt-card"></div>
+  <div class="counter"><span id="apt-cur">01</span><i>/</i><small id="apt-total">04</small></div>
+  <div class="bars" id="apt-bars"></div>
+  <a class="vlink" href="apartments.html#plan" data-ui="s3.plan">Обрати на плані</a>
+</section>
+<div class="apts-all-wrap"><a class="btn-line light" href="apartments.html" data-ui="s3.all">Всі апартаменти і план будинку</a></div>
+
+<!-- S4 days -->
+<section class="days" id="days">
+  <div class="days-pin" id="days-pin">
+    <div class="days-view" id="days-view" data-reveal>
+      <div class="days-head">
+        <span class="label fade-up" data-s="s4.label">Промайна влітку</span>
+        <h2 class="h-sec"><span class="l1" data-s="s4.h1" data-words>Море, гори</span><span class="l2" data-s="s4.h2" data-words>і жодного поспіху.</span></h2>
+        <p class="lead fade-up d3" data-s="s4.p">Пляж за 300 метрів, сосни до самої води, увечері сонце сідає за Брач. Ось що поруч, коли ви тут на тиждень чи два.</p>
+      </div>
+      <div class="days-track" id="days-track"></div>
+    </div>
+  </div>
+  <div class="days-nav">
+    <button type="button" data-days-prev aria-label="Попередня"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5"/></svg></button>
+    <button type="button" data-days-next aria-label="Наступна"><svg viewBox="0 0 16 16"><path d="m6 3 5 5-5 5"/></svg></button>
+  </div>
+</section>
+
+<!-- S5 split -->
+<section class="split" id="prices" data-reveal>
+  <div class="photo"><img src="assets/img/split-summer.webp" srcset="assets/img/split-summer-sm.webp 800w, assets/img/split-summer.webp 1122w" sizes="(max-width: 768px) 100vw, 50vw" alt="" data-img="s5.img"></div>
+  <div class="text">
+    <span class="label fade-up" data-s="s5.label">Напряму від власника</span>
+    <h2 class="fade-up d1" data-s="s5.h">Без комісії Booking</h2>
+    <div class="small fade-up d2"><img src="assets/img/about-b-summer-sm.webp" alt="" data-img="s5.small" data-sm></div>
+    <div class="slides fade-up d3" id="split-slides"></div>
+    <div class="dots" id="split-dots"></div>
+    <div class="calc fade-up d3" id="calc" hidden>
+      <div class="q"><span data-ui="s5.calc.q">Скільки місяців?</span><b id="calc-n">2</b></div>
+      <input type="range" min="2" max="8" step="1" value="2" id="calc-range" aria-label="Скільки місяців">
+      <div class="out" id="calc-out"></div>
+      <div class="note" data-ui="s5.calc.note">Розрахунок для апартаменту від 450 € на двох. Точну ціну Павло назве для вашого апартаменту.</div>
+    </div>
+    <a class="link-u fade-up d4" href="#booking" data-scroll data-s="s5.link" id="split-link">Дізнатися ціну</a>
+  </div>
+</section>
+
+<!-- S6 feature -->
+<section class="feature" id="routes" data-reveal>
+  <div class="wide fade-up"><img src="assets/img/feature-summer.webp" srcset="assets/img/feature-summer-sm.webp 800w, assets/img/feature-summer.webp 1672w" sizes="(max-width: 1200px) 100vw, 1170px" alt="" data-img="s6.img"></div>
+  <div class="c">
+    <span class="label fade-up" data-s="s6.label">Маршрути</span>
+    <h2 class="h-sec"><span class="l1" data-s="s6.h1" data-words>Один день, три</span><span class="l2" data-s="s6.h2" data-words>чи цілий тиждень</span></h2>
+    <p class="lead fade-up d3" data-s="s6.p">Ми склали маршрути з Промайни на 1, 3 і 7 днів: пляжі, гори, сусідні містечка й острови. Карта показує, що де.</p>
+    <div id="feature-summer">
+      <div class="rule"></div>
+      <div class="brief" data-ui="s6.brief">Коротко</div>
+      <div class="facts" id="facts-summer"></div>
+      <div class="routes">
+        <div class="tabs" id="route-tabs">
+          <button type="button" class="btn-pill on" data-route="d1" data-ui="s6.d1">1 день</button>
+          <button type="button" class="btn-pill" data-route="d3" data-ui="s6.d3">3 дні</button>
+          <button type="button" class="btn-pill" data-route="d7" data-ui="s6.d7">7 днів</button>
+        </div>
+        <div class="grid">
+          <ul class="list" id="route-list"></ul>
+          <div class="map" id="map"><div class="fallback" id="map-fallback"></div></div>
+        </div>
+      </div>
+    </div>
+    <div id="feature-winter" hidden>
+      <div class="cols">
+        <div class="ph"><img src="assets/img/feature-winter.webp" srcset="assets/img/feature-winter-sm.webp 800w, assets/img/feature-winter.webp 1122w" sizes="(max-width: 768px) 100vw, 560px" alt="" loading="lazy"></div>
+        <div>
+          <div class="rule"></div>
+          <div class="brief" data-ui="s6.brief">Коротко</div>
+          <ul class="facts" id="facts-winter"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S7 booking -->
+<section class="booking" id="booking" data-reveal>
+  <div class="c">
+    <span class="label fade-up" data-ui="s7.label">Бронювання</span>
+    <h2 class="h-sec"><span class="l1" data-ui="s7.h1" data-words>Напишіть, коли</span><span class="l2" data-ui="s7.h2" data-words>і на скільки</span></h2>
+    <p class="lead fade-up d3" data-s="s7.p">Вкажіть дати і скільки вас. Павло перевірить календар і відповість особисто.</p>
+  </div>
+  <form class="form" id="book-form" novalidate></form>
+</section>
+
+<!-- S8 cta -->
+<section class="cta" id="contact" data-reveal>
+  <div class="ph p1" data-speed=".18"><img src="assets/img/e-brac-sm.webp" alt="" data-cta="0"></div>
+  <div class="ph p2" data-speed="-.12"><img src="assets/img/e-sea-sm.webp" alt="" data-cta="1"></div>
+  <div class="ph p3" data-speed="-.2"><img src="assets/img/apt-3-sm.webp" alt="" data-cta="2"></div>
+  <div class="ph p4" data-speed=".14"><img src="assets/img/e-makarska-sm.webp" alt="" data-cta="3"></div>
+  <div class="c">
+    <h2 class="h-sec big"><span class="l1" data-s="s8.h1" data-words>Готові?</span><span class="l2 gold" data-s="s8.h2" data-words>До моря 300 метрів.</span></h2>
+    <p class="lead fade-up d3" data-s="s8.p">Напишіть Павлу, і він назве ціну на ваші дати.</p>
+    <a class="btn-line fade-up d4" href="#booking" data-scroll data-ui="s8.btn">Написати Павлу</a>
+  </div>
+</section>
+</main>
+
+<!-- S9 footer -->
+<footer class="ft" id="footer">
+  <div class="marquee"><div class="track" id="marquee"></div></div>
+  <div class="ft-grid">
+    <div>
+      <span class="label" data-ui="ft.label">На зв’язку</span>
+      <h2><span data-ui="ft.h1">Напишіть</span><span class="script" data-ui="ft.h2">Павлу.</span></h2>
+      <p class="p" data-ui="ft.p">Відповідає сам, українською. Пишіть, на які дати і скільки вас.</p>
+      <div class="cts">
+        <a class="btn-pill" href="#booking" data-scroll><span data-ui="ft.whatsapp">WhatsApp</span><small data-ui="ft.whatsapp.note">номер додамо</small></a>
+        <a class="btn-pill" href="https://www.threads.com/@pavel_adriatic" target="_blank" rel="noopener">Threads <small>@pavel_adriatic</small></a>
+        <a class="btn-pill" href="https://www.tiktok.com/@pavel_adriatic" target="_blank" rel="noopener">TikTok <small>@pavel_adriatic</small></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <span class="label" data-ui="ft.site">Сайт</span>
+      <ul>
+        <li><a href="#apartments" data-ui="nav.apartments">Апартаменти</a></li>
+        <li><a href="apartments.html#plan" data-ui="nav.plan">План будинку</a></li>
+        <li><a href="#days" data-ui="nav.place">Промайна</a></li>
+        <li><a href="#prices" data-ui="nav.prices">Ціни</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <span class="label" data-ui="ft.planning">Планування</span>
+      <ul>
+        <li><a href="#booking" data-ui="nav.booking">Бронювання</a></li>
+        <li><a href="#routes" data-ui="nav.routes">Маршрути</a></li>
+        <li><a href="#" data-ask-open data-ui="ft.questions">Питання</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-live">
+    <div><div class="k" data-ui="ft.time">Час у Промайні</div><div class="v" id="clock">--:--:--</div></div>
+    <div><div class="k" data-ui="ft.now">Зараз</div><div class="v" id="weather">Промайна</div></div>
+    <div><div class="k" data-ui="ft.sea">До моря</div><div class="v" data-ui="ft.sea.v">300 м</div></div>
+  </div>
+  <div class="ft-big">
+    <span class="word">Pomalo</span>
+    <div class="gulls"><img src="assets/img/gulls.webp" alt="" loading="lazy"></div>
+  </div>
+  <div class="ft-bottom">
+    <div class="soc">
+      <a class="btn-pill" href="https://www.threads.com/@pavel_adriatic" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12.2 2C6.9 2 3.6 5.6 3.6 12s3.3 10 8.6 10c3.9 0 6.5-1.7 7.8-4.3l-2.2-1.1c-.9 1.9-2.7 3.1-5.6 3.1-3.9 0-6.1-2.6-6.1-7.7S8.3 4.3 12.2 4.3c3.4 0 5.4 1.8 5.9 4.6l2.4-.6C19.8 4.5 16.9 2 12.2 2zm.4 6.4c-2.3 0-4 1.2-4.4 3l2.3.5c.2-.9 1-1.4 2.1-1.4 1.3 0 2 .7 2.1 2-.6-.1-1.3-.2-2-.2-2.6 0-4.4 1.3-4.4 3.3 0 1.9 1.5 3.2 3.7 3.2 1.6 0 2.9-.7 3.7-2 .4 1 1.1 1.8 2.2 2.3l1.1-2c-.9-.5-1.4-1.5-1.4-3V13c0-2.9-1.9-4.6-5-4.6zm.1 6c.7 0 1.3.1 2 .3-.1 1.5-1.1 2.4-2.6 2.4-.9 0-1.5-.5-1.5-1.1 0-1 .8-1.6 2.1-1.6z"/></svg>Threads</a>
+      <a class="btn-pill" href="https://www.tiktok.com/@pavel_adriatic" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16.5 2h-3.2v13.4c0 1.6-1.3 2.9-2.9 2.9s-2.9-1.3-2.9-2.9 1.3-2.9 2.9-2.9c.3 0 .6 0 .9.1V9.4c-.3 0-.6-.1-.9-.1-3.4 0-6.1 2.7-6.1 6.1s2.7 6.1 6.1 6.1 6.1-2.7 6.1-6.1V8.5c1.3.9 2.9 1.5 4.6 1.5V6.8C18.9 6.8 16.5 4.6 16.5 2z"/></svg>TikTok</a>
+    </div>
+    <a class="up" href="#top" data-scroll-top><span data-ui="ft.up">Вгору</span><i><svg viewBox="0 0 16 16"><path d="M8 13V3M3 8l5-5 5 5"/></svg></i></a>
+  </div>
+  <div class="ft-copy" data-ui="ft.copy">© 2026 Pomalo, Промайна. Концепт сайту для @pavel_adriatic: фото згенеровані, планування і площі умовні.</div>
+</footer>
+
+<!-- assistant -->
+<button type="button" class="ask-btn" id="ask-btn" aria-label="Запитати" aria-expanded="false">
+  <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
+  <span class="tip" data-ui="as.open">Запитати</span><span class="dot"></span>
+</button>
+<div class="ask" id="ask" data-lenis-prevent>
+  <div class="ask-head">
+    <h3 data-ui="as.title">Питання про Промайну</h3>
+    <p data-ui="as.sub">Відповідає помічник за словами Павла. Чого не знає, передасть Павлу.</p>
+    <button type="button" class="x" data-ask-close data-ui="as.close">Закрити</button>
+  </div>
+  <div class="ask-body" id="ask-body"><div class="ask-qs" id="ask-qs"></div></div>
+  <form class="ask-form" id="ask-form"><input type="text" id="ask-input" placeholder="Ваше питання" data-ui-ph="as.ph" autocomplete="off"><button type="submit" data-ui="as.send">Надіслати</button></form>
+</div>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="js/data.js?v=3"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>
